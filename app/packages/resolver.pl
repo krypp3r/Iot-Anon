@@ -10,9 +10,11 @@ chomp $host;
 my $dns= $host;
 
 sub fore(){
-    for (my $i = 0; $i<100; $i++){
-    my @web = rr($dns, "AAAA", "IN");
-    print(@web);
+    for (my $i = 0; $i<=100; $i++){
+        for (my $element = 0; $element<=$host.length; $element++){
+            my @web = rr($dns, "AAAA", "IN");
+            print(@web);
+    }
 }
 
 }
