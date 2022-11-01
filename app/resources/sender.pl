@@ -11,10 +11,11 @@ my $socket = new IO::Socket::INET (
 );
 
 die "No can't create chat-client, because: $!n" unless $socket;
-
-print "Enter data to send >>";
-my $data = <STDIN>;
-chomp $data;
-print $socket "Message -> '$data'\n";
-
+my $s = 'true';
+while ($s == 'true'){
+    print "Enter data to send >>";
+    my $data = <STDIN>;
+    chomp $data;
+    print $socket "Message -> '$data'\n";
+}
 close($socket);
